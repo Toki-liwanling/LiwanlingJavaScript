@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 设置id选择器 -->
+    <ul id="lstLanguage">
+        <li>Java</li>
+        <li>Python</li>
+        <li>Kolin</li>
+        <li>JavaScript</li>
+    </ul>
+    <button id="btnClick">转换</button>
+    <script>
+        // 用变量获取ul元素
+        const oList = document.querySelector('#lstLanguage')
+        // 设置ul属性
+        // oList.setAttribute('style','border:1px solid grey')
+        // 不用可以remove删除掉,不起作用,隐藏
+        // oList.removeAttribute('style')
+        // const oButton = document.querySelector('#btnClick')
+        // 函数
+        // oButton.addEventListener('click',(event) =>
+        //     {
+        //         oList.setAttribute('style','border:1px solid grey')
+        //     }
+        // )
+        // 通过元素节点style对象属性也可以操作,只针对style对象。
+        // oList.style.border = '1px solid grey'
+        // oList.style.backgroundColor = 'salmon' //background-color
+        // 关键字属性
+        // oList.style.cssFloat = 'right'
+        oList.style.cssText = 'border:1px solid grey;color:salmon;'
+        // 获取属性
+        console.log(oList.style.color)
+    </script>
+</body>
+</html>

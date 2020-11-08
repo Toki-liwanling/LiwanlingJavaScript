@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="buttons">
+        <button>Press 1</button>
+        <button>Press 2</button>
+        <button>Press 3</button>
+    </div>
+    <script>
+        const buttonContainer = document.querySelector()
+    </script> -->
+    <button id="btnClick" onclick='console.log("我在onclick上")'>Click me</button>
+    <script>
+        const oButton = document.querySelector("#btnClick")
+        // function clickMe(){
+        //     console.log('you are clicking me')
+        // }
+        // 事件处理函数
+        const clickMe = () => {
+            console.log('you are clicking me')
+        }
+        const click2 = () => {
+            console.log('you are clicking me two')
+        }
+        //oButton.onclick = clickMe;
+        oButton.addEventListener('click',clickMe);
+        oButton.addEventListener('click',click2);
+    </script>
+</body>
+</html>

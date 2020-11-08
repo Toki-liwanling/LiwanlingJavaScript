@@ -1,0 +1,1 @@
+console.log('hello');//控制台输出

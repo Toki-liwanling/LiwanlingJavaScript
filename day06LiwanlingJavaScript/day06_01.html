@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript的三种引入方式</title>
+    <!-- 1.在<head></head>标签内 -->
+    <script>
+        alert('hello');
+    </script>
+    <!-- 2.引用外部JavaScript文件，在<head></head>或<body></body>标签。 -->
+    <script src="day06.js"></script>
+</head>
+<body>
+    <!-- 3.在<body></body>标签内。 -->
+    <script>
+        console.log('run js in inline script')
+    </script>
+    <!-- 事件属性:元素的某一个属性中编写JavaScript程序或调用 -->
+    <div onclick="console.log('hi')">
+        <p>test</p>
+    </div>
+    <script src="day06.js"></script>
+    <!-- 判断Div元素是什么类型 -->
+    <div id="test"><p>test</p></div>
+    <div id="test">
+        <p>test</p>
+    </div>
+
+    <script>
+        //通过document下的querySelector方法得到节点
+        const oDiv = document.querySelector('#test')
+        console.log(oDiv.nodeType)  //元素节点类型:1
+        console.log(oDiv.nodeName)  //元素节点名称:DIV
+        console.log(oDiv.nodeValue) //元素节点的值:null
+        //子节点对象属性
+        //const oChild = oDiv.firstChild;
+        //最新方式:子元素节点类型
+        const oChild1 = oDiv.firstElementChild;
+        // console.log(oChild.nodeType)//浏览器可能会把空格当成子节点,类型为3，改为<div id="test"><p>test</p></div>
+        console.log(oChild1.nodeType)
+    </script>
+</body>    
+</html>

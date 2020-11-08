@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 创建元素，设置id
+    <ul id="lstLanguage">
+        <li>JavaScript</li>
+        <li>Java</li>
+        <li>Python</li>
+        <li>AI</li>
+    </ul> -->
+
+    <script>
+        // 创建一个文档片段
+        const oFrag = document.createDocumentFragment()
+        // 创建一个UL元素节点
+        const oList = document.createElement('ul')
+        // 设值id
+        oList.setAttribute("id","lstLanguage")
+        // 把UL元素节点添加成为body元素的子节点
+        oFrag.appendChild(oList)
+        //oList.innerHTML = ""
+        // 创建一个li元素节点
+        const oItem = document.createElement('li')
+        oList.appendChild(oItem)
+        // 创建文本节点
+        const oText = document.createTextNode('JavaScript')
+        oItem.appendChild(oText)
+        // 提升性能
+        document.body.appendChild(oFrag)
+    </script>
+</body>
+</html>

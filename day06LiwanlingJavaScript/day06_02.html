@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=60, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 伪类选择器 -->
+    <style>
+        #lstCourse :last-child{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 列表id属性 -->
+    <ul id="lstCourse">
+        <li class="course">Java</li>
+        <li class="course">JavaScript</li>
+        <li class="course">Python</li>
+        <li class="course">C</li>
+    </ul>
+    <script>
+        //通过id号快速定位唯一的元素   
+        const oList = document.getElementById('lstCourse');//id号唯一
+        console.log(oList.nodeName);//节点未找到就返回null 节点名称
+        //UL codesnag
+
+        //通过标记名获取元素，动态节点
+        const oElements = document.getElementsByTagName('li');
+        console.log(oElements.length);
+
+		//通过类名获取元素
+        const oLis = document.getElementsByClassName('course');//节点列表
+        console.log(oLis.length);
+
+		//通过选择器selector的方式获取元素,比以上方法更精确。
+		//文档中匹配作为实参提供的CSS选择器的第一个元素。
+        const oLastLi = document.querySelector('#lstCourse :last-child');//CSS找最后一个元素
+        console.log(oLastLi.innerHTML);
+
+        const oAllLi = document.querySelectorAll('.course');
+        console.log(oAllLi.length);
+    </script>
+</body>
+</html>
