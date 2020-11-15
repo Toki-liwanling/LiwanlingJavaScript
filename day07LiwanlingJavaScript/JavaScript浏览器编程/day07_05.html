@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 盒模型 */
+        .box {
+            border: 1px solid coral;
+            height: 100px;
+            width: 100px;
+        }
+        .bgColor {
+            background-color: darkgray;
+        }
+        .show {
+            /* display: none; */
+            /* 位置固定 */
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">test</div>
+    <button id="btnClick">点我</button>
+    <script>
+        const oDiv = document.querySelector("#myDiv");
+        // 设置属性
+        // oDiv.className = 'box bgColor' // 类选择器不唯一。
+        oDiv.classList.add(['box']);//添加类
+        oDiv.classList.add(['bgColor']);//列表
+        const btnClick = document.querySelector('#btnClick');
+        // 箭头函数 绑定事件
+        btnClick.addEventListener('click',() => {
+            //oDiv.classList.add('show');//添加类
+            oDiv.classList.toggle('show');//切换
+            oDiv.classList.remove('bgColor');//删除类
+            console.log(oDiv.classList);
+        })
+    </script>
+</body>
+</html>

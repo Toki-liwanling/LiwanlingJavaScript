@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const div1 = document.getElementsByTagName("div");
+        const i = 0;
+        while(i < div1.length) {
+            document.body.appendChild(document.createDocumentFragment("div"));
+            i++;
+        }
+
+        const div2 = document.getElementsByTagName("div"),i = 0;
+        console.log(div2.length);
+        while(i < div2.length) {
+            document.body.appendChild(document.createElement("div"));
+            i++;
+        }
+        console.log(div2.length);
+    </script>
+</body>
+</html>

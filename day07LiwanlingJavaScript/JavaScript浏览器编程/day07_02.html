@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- img标记 -->
+    <img src="" alt="">
+    <script>
+        // 直接通过doctype属性访问。
+        const doctype = document.doctype;
+        console.log(doctype);// 控制台输出:<!DOCTYPE html>
+		console.log(typeof doctype);// 控制台输出:object
+
+        // documentElement文档元素:HTML标记里的所有元素。
+        const html1 = document.documentElement;
+        console.log(html1);//不是html标记,而是HTML元素以及里面所包含的所有节点,没包含文档类型定义.
+        console.log(typeof html1);//typeof运算符判断变量类型,返回Object对象,不是字符串.
+        
+        // document.head:获取网页的 head 元素。
+        console.log(document.head);
+
+        //控制台输出:
+        //<head>
+        //    <meta charset="UTF-8">
+        //    <meta name="viewport" content="width=1200, initial-scale=1.0">
+        //    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        //    <title>Document</title>
+        //</head>
+
+        // document.body:返回网页的body元素。
+        console.log(document.body);// body元素的内容和本身.
+
+        // document.images:返回文档中所有图像的一个节点列表。
+        console.log(document.images);
+        //类型是object,对象的集合转换为数组方法Array.from().
+    </script>
+</body>
+</html>

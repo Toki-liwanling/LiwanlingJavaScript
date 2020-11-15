@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>测试访问元素内容</h1>
+    <p>this is <i>a text</i> document</p>
+    <script>
+        const oPara = document.querySelector("p");
+        // 在元素附近可以任意插入html标记
+        oPara.insertAdjacentHTML('beforeend','<i>test</i>');//beforebegin <p>前 afterbegin <p> <p>this is <i>a text</i> document<i>test</i></p>
+        // 元素节点 元素内容
+        console.log(oPara.innerHTML);//this is <i>a text</i> document
+        console.log(typeof innerHTML);//类型String
+        console.log(oPara.outerHTML);//<p>this is <i>a text</i> document</p>
+        console.log(oPara.textContent);//this is a text document
+        console.log(oPara.innerText);//IE浏览器,非标准。this is a text document
+        oPara.innerHTML = "<b>test</b><i>test1</i>";//设置,替换内容。testtest1
+    </script>
+</body>
+</html>

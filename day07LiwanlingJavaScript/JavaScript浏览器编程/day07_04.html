@@ -1,0 +1,29 @@
+<!-- FE Spring -->
+<!-- window 全局对象 document 对象-node -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .test1{
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">Test</div>
+    <!-- 关键字label标记for属性:表明与input绑定。 -->
+    <!-- htmlFor -->
+    <label for="username">test</label><input type="text" name="username">
+    <script>
+        //html属性都是原生属性。
+        const oDiv = document.querySelector("#myDiv");
+        console.log(oDiv.id);//输出id属性 控制台输出:myDiv。
+        oDiv.className = "test1";//直接赋值属性。
+        console.log(oDiv.className);//控制台输出:test1。
+    </script>
+</body>
+</html>

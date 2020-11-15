@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .test {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv" class="test">test</div>
+    <script>
+        // setAttribute()、getAttribute()即可以对原生属性,又可以对自定义属性设置。
+        const oDiv = document.querySelector("#myDiv");
+        oDiv.setAttribute('class','test');//原生属性
+        oDiv.setAttribute('foo','test1');
+        console.log(oDiv.getAttribute('id'));    // myDiv
+        console.log(oDiv.getAttribute('foo'));   // 自己的属性
+        oDiv.removeAttribute('foo');
+        console.log(oDiv.getAttribute('foo'));   // null
+    </script>
+</body>
+</html>

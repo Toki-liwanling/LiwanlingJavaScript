@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 自定义数据属性 -->
+    <div data-username="liwanling" data-password="aaa">database</div>
+    <!-- 脚本 -->
+    <script>
+        const oDiv = document.querySelector("div");
+        // 自定义的数据属性放在元素的dataset属性（数据集）中，包含一组键值对映射。
+        console.log(oDiv.dataset);// DOM字符串映射。对象。
+        console.log(oDiv.dataset.username);// data-user-name userName
+        console.log(oDiv.dataset.password);
+        oDiv.dataset.username = 'li';// 设值
+        console.log(oDiv.dataset.username);
+    </script>
+</body>
+</html>

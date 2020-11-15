@@ -1,0 +1,23 @@
+<!-- FE Spring -->
+<!-- window 全局对象 document 对象-node -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <!-- 在HTML网页中嵌入JavaScript的方式 -->
+    <!-- 1.行内(事件属性)——不推荐，JavaScript代码和html混合修改时较麻烦。 -->
+    <button onclick="console.log('hello')"></button>
+    <!-- 2.内嵌 -->
+    <script>
+        console.log('hello');
+    </script>
+    <!-- 3.引入外部脚本，多个网页可共用一个js文件。 -->
+    <script src="day1.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv">
+        <p id="myPara1">test1</p>
+        <p id="myPara2">test2</p>
+    </div>
+    <script>
+        const oDiv = document.querySelector("#myDiv");
+        console.log(oDiv.parentNode);//父节点是body,可能会把空白当成一个节点。
+        console.log(oDiv.parentElement);//父元素body,安全。
+        console.log(oDiv.childElementCount);//元素子节点的数目,
+        console.log('子元素的数目为:',oDiv.childElementCount);//2
+        console.log('子节点的数目为:',oDiv.childNodes);//NodeList(5)
+        console.log(oDiv.children);//元素集合,2个。
+        console.log(oDiv.childNodes);//节点列表,5个。遍历。
+
+        console.log(oDiv.firstChild.innerHTML);//第一个节点内容 undefined(空格)。
+        console.log(oDiv.lastChild.innerHTML);//最后一个节点内容 undefined(空格)。
+        
+        console.log(oDiv.firstElementChild.innerHTML);//第一个元素子节点内容test1。
+        console.log(oDiv.lastElementChild.innerHTML);//最后一个元素子节点内容test2。
+
+        const oP2 = document.querySelector("#myPara2");
+        console.log(oP2.previousElementSibling.textContent);//相邻节点（兄弟元素）文本内容test1。
+        //抽象语法树
+
+        console.log("P2节点类型为:",oP2.nodeType,"节点名称为:",oP2.nodeName,"节点值为:",oP2.nodeValue);// 1 P null
+        //有些元素节点是有值的,有些元素节点是没有值的，如有些表单控件、文本节点是有节点值的。
+    </script>
+</body>
+</html>

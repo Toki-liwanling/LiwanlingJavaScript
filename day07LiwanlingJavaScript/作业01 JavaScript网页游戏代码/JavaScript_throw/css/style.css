@@ -1,0 +1,186 @@
+/**********************************************
+*** GENERAL
+**********************************************/
+/* 最终得分 */
+.final-score {
+    position: absolute;
+    left: 50%;
+    /* translateX(n):元素X轴（水平方向）移动。 */
+    transform: translateX(-50%);
+    top: 520px;
+    color: #555;
+    font-size: 18px;
+    font-family: 'Lato';
+    text-align: center;
+    /* padding:内边距。 */
+    padding: 10px;
+    width: 160px;
+    /* text-transform:属性控制文本的大小写。uppercase:所有文字大写显示； */
+    text-transform: uppercase;
+}
+/* outline(轮廓)是绘制于元素周围的一条线，位于边框边缘的外围。 */
+.final-score:focus { outline: none; }
+
+#dice-1 { top: 120px; }
+#dice-2 { top: 250px; }
+
+
+* {
+    /* margin:外边距。 */
+    margin: 0;
+    padding: 0;
+    /* box-sizing:指定两个boxes接壤。border-box指定宽度和高度（最小/最大属性）确定元素边框。 */
+    box-sizing: border-box;
+    
+}
+
+.clearfix::after {
+    /* :after 伪元素在元素之后添加内容，这个伪元素允许在元素内容的最后面插入生成内容。 */
+    content: "";
+    /* diaplay用于定义建立布局时元素生成的显示框类型，此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。 */
+    display: table;
+    /* clear属性规定元素的左右两侧均不允许浮动元素。 */
+    clear: both;
+}
+
+body {
+    /* linear-gradient()函数用于创建一个表示两种或多种颜色线性渐变的图片。 */
+    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(../images/back.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: Lato;
+    font-weight: 300;
+    position: relative;
+    height: 100vh;
+    color: #555;
+}
+
+.wrapper {
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    /* box-shadow 属性向框添加一个或多个阴影。 */
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    /* overflow 属性规定当内容溢出元素框时发生的事情，hidden内容会被修剪，并且其余内容是不可见的。 */
+    overflow: hidden;
+}
+
+.player-0-panel,
+.player-1-panel {
+    width: 50%;
+    float: left;
+    height: 600px;
+    padding: 100px;
+}
+
+
+
+/**********************************************
+*** PLAYERS
+**********************************************/
+
+.player-name {
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 100;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.player-score {
+    text-align: center;
+    font-size: 80px;
+    font-weight: 100;
+    color: #EB4D4D;
+    margin-bottom: 130px;
+}
+
+.active { background-color: #9bb49b; }
+.active .player-name { font-weight: 300; }
+
+.active .player-name::after {
+    content: "\2022";
+    font-size: 47px;
+    position: absolute;
+    color: #EB4D4D;
+    top: -7px;
+    right: 10px;
+    
+}
+
+.player-current-box {
+    background-color: #EB4D4D;
+    color: #fff;
+    width: 40%;
+    margin: 0 auto;
+    padding: 12px;
+    text-align: center;
+}
+
+.player-current-label {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #222;
+}
+
+.player-current-score {
+    font-size: 30px;
+}
+
+button {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #555;
+    background: none;
+    border: none;
+    font-family: Lato;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover { font-weight: 600; }
+button:hover i { margin-right: 20px; }
+
+button:focus {
+    outline: none;
+}
+
+i {
+    color: #EB4D4D;
+    /* inline-block行内块元素。 */
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 32px;
+    line-height: 1;
+    /* vertical-align属性设置元素的垂直对齐方式，把元素的顶端与父元素字体的顶端对齐。 */
+    vertical-align: text-top;
+    margin-top: -4px;
+    transition: margin 0.3s;
+}
+
+.btn-new { top: 45px;}
+.btn-roll { top: 403px;}
+.btn-hold { top: 467px;}
+
+.dice {
+    position: absolute;
+    left: 50%;
+    top: 178px;
+    transform: translateX(-50%);
+    height: 100px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+}
+
+.winner { background-color: #f7f7f7; }
+.winner .player-name { font-weight: 300; color: #EB4D4D; }

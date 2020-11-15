@@ -1,0 +1,29 @@
+<!-- FE Spring -->
+<!-- window 全局对象 document 对象-node -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- div元素 -->
+    <div id="myDiv">
+        <p id="myPara">test</p>
+    </div>
+    <script>
+        // 只有document元素具有getElementById()方法。
+        const oDiv = document.getElementById('myDiv');//在整个文档里找div元素。
+        // oDiv.getElementById
+
+        // const oPara = oDiv.getElementById('myPara');//在div元素里找id=myPara。
+        // const oPara = oDiv.getElementsByTagName('p');
+        const oPara = oDiv.querySelector("#myDiv #myPara");
+        console.log(oDiv);// 控制台输出:<div id="myDiv"><p id="myPara">test</p></div>.
+        console.log(oPara);// 控制台输出:<p id="myPara">test</p>.
+        //console.log(oPara[0])
+    </script>
+</body>
+</html>
