@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background: lightblue;
+            padding: 20px;
+        }
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background: lightcoral;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div嵌套div -->
+    <div id="box1">
+        <div id="box2"></div>
+    </div>
+    <script>
+        // const box1 = document.querySelector('#box1');
+        const box = document.querySelector('#box2');
+        box.addEventListener('click',(event) => {// 绑定事件处理程序
+            console.clear();// 清理控制台内容
+            console.log(`clientX=${event.clientX},clientY=${event.clientY}`);// 有变量,用模板字符串。
+            console.log(`screenX=${event.screenX},screenY=${event.screenY}`);
+            console.log(`pageX=${event.pageX},pageY=${event.pageY}`);
+            console.log(`offsetX=${event.offsetX},offsetY=${event.offsetY}`);
+            console.log(`x=${event.x},y=${event.y}`);
+            console.log(`layerX=${event.layerX},layerY=${event.layerY}`);
+            console.log(`event.type=${event.type}`);// 事件类型click
+            console.log(`event.target=${event.target}`);// 事件目标html对象div元素
+            console.log(`event.currentTarget=${event.currentTarget}`);// 当前目标div元素
+        },true)
+
+        const callback = function(event) {
+            switch (event.type){// 判断事件类型
+                case "mouseover":// 什么数据类型都可以
+                    event.target.style.backgroundColor = "yellow";// 事件目标
+                    break;
+                case "mouseout": 
+                    event.target.style.backgroundColor = "grey";
+                    break;
+            }
+        }
+        box.addEventListener('mouseover',callback);
+        box.addEventListener('mouseout',callback);
+    </script>
+</body>
+</html>

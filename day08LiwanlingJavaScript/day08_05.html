@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event事件对象</title>
+</head>
+<body>
+    <div>my div</div>
+    <script>
+        const myDiv = document.querySelector('div');
+        // 事件处理函数里(默认对象)第一个参数是Event对象,Event对象事件发生时的一种快照(瞬间状态),是隐式的(可以不传任何参数)。
+        myDiv.addEventListener('click',(event) => {// event代表事件对象,事件对象是鼠标点击事件(mouseevent)
+            console.log(`${event.type}`);// 控制台输出事件类型click
+        })
+        //对象本身是一个构造函数,可以自定义事件。
+        //                           事件名字,事件对象(bubbles:是否冒泡(往复传递),cancelable:是否可取消。)
+        const helloEvent = new Event('hello',{bubbles:true,cancelable:false});// 1.创建事件:事件类型hello
+        myDiv.addEventListener('hello',() => {// 2.目标添加监听器,不同事件对象进行操作可以不传任何参数也能执行代码
+            myDiv.style.backgroundColor = "blue";// 事件发生改变背景颜色
+            console.log(event.isTrusted);
+        })
+        myDiv.dispatchEvent(helloEvent);//3.目标没办法自动触发,只有手动触发事件,触发用创建的对象。
+    </script>
+</body>
+</html>

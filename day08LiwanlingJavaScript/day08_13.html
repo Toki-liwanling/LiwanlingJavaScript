@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv">test</div>
+    <script>
+        const oDiv = document.querySelector('#myDiv');
+        const styles = window.getComputedStyle(oDiv);// 返回一个对象
+        console.log(styles);
+        console.log(styles.backgroundColor);
+        styles.backgroundColor = 'red'; // 抛出异常
+    </script>
+</body>
+</html>

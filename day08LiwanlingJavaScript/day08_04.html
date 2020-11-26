@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件传播机制</title>
+    <style>
+        #box {
+           width: 200px;
+           height: 200px;
+           border: 1px solid gray; 
+           background-color: silver;
+        }
+    </style>
+</head>
+<body>
+    <!-- div盒子 -->
+    <div id="box">box</div>
+    <!-- 每个元素对象绑定事件处理程序,相当于从window对象->document文档对象->html对象->body对象->box对象(每个阶段) -->
+    <script>
+        // 简便方法:Event对象 函数
+        // const callback = function(event){
+        // }
+        const oBox = document.querySelector('#box');// 查询字符串
+        // 事件监听器默认对象第一个参数是Event对象,Event对象事件发生时的一种快照。
+        window.addEventListener('click',(e) => {
+            console.log('==> window 捕获阶段');
+        },true)// 第三个参数默认是false,true表示在捕获阶段调用事件处理程序
+        document.addEventListener('click',() => {
+            console.log('==> document 捕获阶段');
+        },true)
+        // html捕获阶段:获取html节点
+        document.documentElement.addEventListener('click',() => {
+            console.log('==> html 捕获阶段');
+        },true)
+        document.body.addEventListener('click',() => {
+            console.log('==> body 捕获阶段');
+        },true)
+        // 目标节点:浏览器处理方式不一样,一般是捕获不了的。
+        oBox.addEventListener('click',() => {
+            console.log('==> box 捕获阶段')
+        },true)
+
+        // false（默认值）表示在冒泡阶段调用事件处理程序
+        window.addEventListener('click',() => {
+            console.log('==> window 冒泡阶段');
+        },false)
+        document.addEventListener('click',() => {
+            console.log('==> document 冒泡阶段')
+        },false)
+        document.documentElement.addEventListener('click',() => {
+            console.log('==> html 冒泡阶段')
+        },false)
+        document.body.addEventListener('click',() => {
+            console.log('==> body 冒泡阶段')
+        },false)
+        // 目标元素的上一个子元素截止
+        oBox.addEventListener('click',() => {
+            console.log('==> box 冒泡阶段')
+        },false)
+    </script>
+</body>
+</html>

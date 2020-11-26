@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a id="link" href="http://www.microsoft.com">Microsoft HomePage</a>
+    <input type="text">
+    <script>
+        const oLink = document.querySelector('#link');
+        oLink.addEventListener('click',(event) => {
+            if (event.cancelable) {
+                event.preventDefault();//老方法return false
+            }
+            console.log(event.defaultPrevented);// 控制台输出
+            console.log('hello,link');
+        })
+
+        const oText = document.querySelector('input')
+        oText.addEventListener('keypress',(event) => {
+            if (event.charCode < 97 || event.charCode > 122){
+                event.preventDefault();
+            }
+        })
+    </script>
+</body>
+</html>

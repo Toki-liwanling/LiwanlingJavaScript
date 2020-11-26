@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 点击按钮 -->
+    <button>click</button>
+
+    <script>
+        // 为按钮添加click事件
+        // 1.获取事件目标
+        const oButton = document.querySelector('button');
+        // 函数声明
+        // function callback() {
+        //     console.log('Hello,Event');
+        // }
+        // or
+        // 函数表达式 回调函数
+        const callback = function() {
+            console.log('Hello,Event');
+        }
+        //注册事件处理程序:同一事件addEventListener可以绑定多个事件处理程序
+        oButton.addEventListener('click',callback);
+        oButton.addEventListener('click',()=>{
+            console.log('hello,event1');
+        },true)
+    </script>
+</body>
+</html>

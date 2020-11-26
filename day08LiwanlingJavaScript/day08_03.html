@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btnTest1">click me</button>
+    <!-- 元素上直接设置onclick属性 -->
+    <button id="btnTest2" onclick='console.log("test")'>click me2</button>
+    <script>
+        // 获取事件目标
+        const myButton = document.querySelector('#btnTest1');
+        // myButton.onclick = function() {
+        //     console.log('onclick');
+        // }
+        // //通过这种方式只能设置一个事件处理程序。
+        // myButton.onclick = function() {
+        //     console.log('hello');
+        // }
+        // myButton.onclick = null;//去掉绑定的事件处理程序。
+
+        // const callback = () => {
+        //     console.log('I am in addEvent')
+        // }
+        // 事件处理程序 回调函数
+        const callback = () => {
+            console.log('callback1');// 控制台输出
+        }
+        const callback2 = () => {
+            console.log('callback2');
+        }
+        const callback3 = () => {
+            console.log('callback3');
+        }
+        // 事件处理程序 箭头函数
+        // myButton.addEventListener('click',() => {
+        //     console.log('I am in addEventListener');
+        // })
+        
+        myButton.addEventListener('click',callback,false);// addEventListener可以绑定多个事件处理程序,性能会受影响。
+        myButton.addEventListener('click',callback2);
+        myButton.addEventListener('click',callback3);
+        //myButton.removeEventListener('click',callback);// 解除事件绑定
+    </script>
+</body>
+</html>

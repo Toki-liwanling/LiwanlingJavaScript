@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件对象属性</title>
+</head>
+<body>
+    <button>click me</button>
+    <script>
+        const oButton = document.querySelector('button');
+        oButton.addEventListener('click',(event) => {// 为按钮添加事件监听器
+            // for循环:of是遍历迭代器,in遍历所有属性。
+            for(let prop in event) {// 遍历Event对象属性
+                console.log(prop);
+            }
+        })
+    </script>
+</body>
+</html>

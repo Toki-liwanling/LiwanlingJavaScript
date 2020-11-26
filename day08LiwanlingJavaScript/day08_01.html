@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Java</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+    </ul>
+    <script>
+        const oList = document.querySelector('ul');// 通过查询选择器获取元素
+        const oE = document.createElement('li');// 创建标签
+        oE.append('Swift');// 添加文本
+        // or
+        // oE.textContent = 'Swift';// 返回或设置一个元素内所有子节点及其后代的文本内容
+        oList.append(oE);// 插入成为最后一个节点
+        oList.prepend(oE);// 插入成为第一个节点
+        oList.lastElementChild.before(oE);// 最后一个子节点的前面一个
+        oList.firstElementChild.after(oE);// 插入第一个子节点之后
+        oList.firstElementChild.nextElementSibling.remove();// 第一个子节点后下一个元素相邻节点
+        oList.lastElementChild.replaceWith(oE);// 替换父节点下的最后一个子节点
+    </script>
+</body>
+</html>

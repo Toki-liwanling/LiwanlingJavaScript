@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text"><i id="tooltip">请在这里输入电话号码</i>
+    <script>
+        const tooltip = document.querySelector("#tooltip");// 通过查询选择器获取元素
+        tooltip.classList.add("hidden");// 加入
+        tooltip.classList.remove("hidden");// 删除
+        tooltip.classList.toggle("hidden");// 切换
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件委托创建li元素</title>
+</head>
+<body>
+    <!-- 事件委托 -->
+    <ul id="oList">
+        <li>C</li>
+        <li>AI</li>
+        <li>Java</li>
+        <li>Python</li>
+    </ul>
+    <input type="text" id="txtCourse" />
+    <button id="btnAdd">添加</button>
+    <script>
+        const oList = document.querySelector('#oList');
+        const txtCourse = document.querySelector("#txtCourse");
+        const btnAdd = document.querySelector("#btnAdd");
+
+        btnAdd.addEventListener('click',(event) => {
+            const oElement = document.createElement('li');// 创建li节点
+            const oText = document.createTextNode(txtCourse.value);// 创建文本节点
+            oElement.appendChild(oText);// 为li追加文本节点
+            oList.appendChild(oElement);// 将li加入ul
+            txtCourse.value = "";
+        });
+
+    </script>
+</body>
+</html>
