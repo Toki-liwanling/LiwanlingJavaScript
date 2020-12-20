@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const student = {
+            studentName:'liwanling',
+            age:20,
+            learn(){
+                console.log('hello,JavaScript!')
+            }
+        };
+        console.log('studentName' in student);
+        console.log('learn' in student);
+
+        if(student.studentName !== undefined){
+            console.log('studentName属性存在!')
+        }
+        if(student.hasOwnProperty('learn')){
+            console.log('learn方法存在!')
+        }
+
+        for(let p in student){
+            console.log(p);
+        }
+
+        for(let key of Object.keys(student)){
+            console.log(key);
+        }
+
+        for(let value of Object.values(student)){
+            console.log(value);
+        }
+
+        for(let [key,value] of Object.entries(student)){
+            console.clear();
+            console.log(`key:${key},value:${value}`);
+        }
+
+        //对象复制
+
+        //命名空间
+        const myMaths = {
+            square(x){
+                return x * x;
+            }
+        }
+    </script>
+</body>
+</html>

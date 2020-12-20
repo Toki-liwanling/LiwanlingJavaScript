@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const student = {//对象字面量
+            //'student Name':'liwanling',
+            studentName:'liwanling',
+            age:20,
+            // learn:function(){
+            //     console.log('hello,JavaScript!')
+            // }
+            learn(){
+                console.log('hello,JavaScript!')
+            }//ES6
+        };
+        //student['student Name'];
+        student.learn();
+
+        const oStudent = new Object();
+        oStudent.studentName = 'li';
+        oStudent.age = '20';
+        oStudent.learn = function(){
+            console.log('hello');
+        }
+        delete oStudent.studentName;
+        console.log(oStudent.studentName);// undefined
+
+        let studentName = 'liwanling',age = '20';
+        const oStudent1 = {
+            studentName:studentName,
+            age:age,
+            learn(){
+                console.log('hello,learn me');
+            }
+        }
+        console.log(oStudent1.age);
+        oStudent1['learn']();
+
+        const oStudent2 = {studentName,age};//oStudent1简写
+        console.log(oStudent2.studentName);
+
+        let a = 'catch',b = 'Phrase';
+        const hulk = {
+            name:'Hulk',
+            [a + b]:'Hulk Smash'
+        }
+        console.log(hulk);
+
+        const name = Symbol('name');
+        const superGirl = {[name]:'superGirl'};
+
+        console.log(superGirl[name]);
+
+        const realName = Symbol('real name');
+        superGirl[realName] = 'Kara panvers';// 添加新属性
+
+        console.log(superGirl[realName]);
+        console.log(superGirl.realName);// 不能用点运算符访问Symbol属性，唯一
+
+        console.log(superGirl);
+
+        const daredevil = {
+            [name]:'paredevil',
+            [realName]:'Matt Murdoch'
+        };
+        console.log(daredevil);
+
+    </script>
+</body>
+</html>

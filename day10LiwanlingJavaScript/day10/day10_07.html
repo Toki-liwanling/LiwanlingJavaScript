@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+</head>
+<body>
+    <script>
+        //正则表达式字面量
+        const pattern = /javascript/;
+        let a = pattern.test('javascript');
+        console.log(a);
+        //    
+        const pattern1 = new RegExp('javascript');
+        //let b = pattern1.test('javascript');
+        let b = pattern1.exec('javascript');
+        console.log(b);
+
+        const pattern2 = new RegExp('[a-zA-Z]'+ing);
+        console.log(pattern2.test(joke));
+        console.log(pattern2.test(jokeing));
+
+        /dog/.test('hot dog');//true
+        
+        /d.g/.test('dog');//true
+
+        /d.g/.test('dooooog');//false
+
+        /^dog/.test('adog');//false
+
+        /^dog$/.test('dogdog');//单个字符出一次，dog
+
+    </script>
+</body>
+</html>

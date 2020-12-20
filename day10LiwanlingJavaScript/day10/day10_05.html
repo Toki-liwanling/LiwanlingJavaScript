@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // boolean对象
+        // 1.构造函数
+        let bool = new Boolean(true);
+        console.log(typeof bool);
+        console.log(bool.valueOf());
+        // 2.转换为boolean值
+        Boolean(undefined);//false
+        Boolean(null);//false
+        Boolean(0);//false
+        Boolean('');//false
+        Boolean('null');//false
+
+        let a;
+        // if(Boolean(a)){//布尔类型转换
+        //     console.log(a);//不执行
+        // }
+        if(a){//关系表达式
+            console.log(a);//不执行
+        }
+
+        //Number对象
+        let c = new Number(123);
+        console.log(typeof c);
+
+        // for(let p in Number){
+        //     console.log(p);
+        // }
+        //静态方法
+        Number.isNaN('12a');//false
+        Number.parseInt('12.11');//12
+        Number.isInteger('12.11');//false
+        Number.parseFloat('12');//JS基本没有整型，都是浮点数
+
+        console.log((345).toLocaleString('zh-hans-CN-u-nu-hanidec'));//浏览器可以，window node不行
+        
+        //String对象
+        
+
+    </script>
+</body>
+</html>

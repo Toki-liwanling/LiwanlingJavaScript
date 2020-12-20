@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定时函数</title>
+
+</head>
+<body>
+
+    <script>
+        const callback = function() {
+            console.log('Timeout!');
+        }
+        //setTimeout(callback,3000);//单位是毫秒
+        let a = setTimeout(callback,3000);//0 所有同步执行完成，再执行此句
+        clearTimeout(a);
+        console.log(a);// 1函数返回值，无任何意义
+
+        let b = window.setInterval(callback,3000);
+        console.log(b);//每隔3秒进行一次
+    </script>
+</body>
+</html>
