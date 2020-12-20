@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOM</title>
+</head>
+<body>
+    <button id="btnClick">click</button>
+    <script>
+        // for(let a in window){
+        //     console.log(a)
+        // }
+        const oButton = document.querySelector('#btnClick');
+        let a = window.open('day09_01.html','打开一个窗口演示');
+        oButton.addEventListener('click',(event) => {
+            //window.alert('hello');
+            //alert('hello JavaScript')
+            // let a = confirm('是否确定删除记录');
+            // alert(a);
+
+            // let b = prompt('请输入用户名','admin');
+            // alert(b);
+            // for(let n in navigator){
+            //     // window.navigator
+            //     console.log(n);
+            // }
+            // console.log(location.href)
+            // console.log(location.protocol)
+            // console.log(location.host)
+            // console.log(location.hostname)
+            // console.log(location.port)
+            // console.log(location.pathname)
+            // console.log(location.search)
+            // console.log(location.hash)
+
+            // console.log(location.origin)
+            // location.reload(true);
+            // location.assign(day09_01.html);
+            // location.replace(day09_01.html);
+            // alert(location.toString())
+            // history.go(a)
+            // history.go(-1)
+            // history.go(1)
+            // history.back()
+            // history.forward()
+            // let a = window.open('day09_01.html','打开一个窗口演示')
+            a.moveTo(100,200);
+            a.close();
+        })
+    </script>
+</body>
+</html>

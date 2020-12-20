@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div>test</div>
+    <script>
+        const oDiv = document.querySelector('div');
+
+        oDiv.addEventListener0('mousedown',(event) => {
+            // console.log(`按了鼠标的:${e.button}`);// 0 left 1 middle 2 right
+            // console.log(`几个按钮:${e.buttons}`);
+            // console.log(`是否按了Ctrl键:${e.ctrlKey}`);
+            // console.log(`是否按了Alt键:${e.altKey}`);
+            // console.log(`是否按了Shift键:${e.shiftKey}`);
+            // console.log(`是否按了Meta键:${e.metaKey}`);
+
+            oDiv.textContent = `按了鼠标的:${event.button}`;
+            oDiv.textContent = `按了几个鼠标:${event.buttons}`;//left 1 right2 moudele4
+            oDiv.textContent = `按了Ctrl键:${event.ctrlKey}`;
+        })
+    </script>
+</body>
+</html>

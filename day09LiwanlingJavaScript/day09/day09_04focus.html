@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>焦点事件示例</title>
+    <style>
+        .bgc{
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <input type="text" id="userName">
+    </form>
+    <script>
+        const oUserName = document.querySelector('#userName');
+        oUserName.addEventListener('focus',(e) => {//得到焦点focusin
+            // oUserName.style.backgroundColor = 'grey';
+            oUserName.classList.add('bgc');
+        })
+        oUserName.addEventListener('blur',(e) => {//失去焦点focusout
+            // oUserName.style.backgroundColor = 'white';
+            oUserName.classList.remove('bgc')
+        })
+    </script>
+</body>
+</html>

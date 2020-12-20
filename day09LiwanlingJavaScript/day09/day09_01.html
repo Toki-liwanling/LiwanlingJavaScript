@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件委托实例</title>
+    <style>
+        .box{
+            background-color: coral;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>Java</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>AI</li>
+    </ul>
+    <input type="text" id="txtCourse">
+    <button id="btnAdd">+</button>
+    <button id="btnDel">-</button>
+    <script>
+        //事件委托给ul mouseover/mouseout
+        const oList = document.querySelector('#list');
+        oList.addEventListener('mouseover',(event) => {
+            if(event.target != event.currentTag){
+                event.target.classList.add('box');
+            }
+        })
+        oList.addEventListener('mouseout',(event) => {
+            event.target.classList.remove('box');
+        })
+    </script>
+</body>
+</html>

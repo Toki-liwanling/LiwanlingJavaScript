@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片加载</title>
+</head>
+<body>
+    <img src="../img/事件传播机制.png" alt="LOGO" id="imgLogo">
+    <script>
+        const oLogo = document.querySelector('#imgLogo');
+        //数据初始化
+        // oLogo.addEventListener('load',(event) => {
+        //     //window.alert('我在加载图像之前弹出！');
+        //     alert('我在加载图像之前弹出！');
+        // })
+
+        oLogo.addEventListener('error',(event) => {
+            alert('图片不存在');//不存在文件
+        })
+
+        // window.addEventListener('load',(e) => {
+        //     alert('test');
+        // })
+
+        window.addEventListener('unload',(event) => {
+            alert('unload');
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+            border: 1px solid darkgray;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">盒子</div>
+    <script>
+        const oBox = document.querySelector('#box');
+        oBox.addEventListener('mousedown',() => {
+            console.log('mousedown');
+        })
+    </script>
+</body>
+
+</html>

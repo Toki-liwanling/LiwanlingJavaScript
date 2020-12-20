@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上下文示例</title>
+    <style>
+        ul{
+            visibility: hidden;
+            background-color: rgb(167, 167, 167);
+            position: absolute;
+            list-style-type: none;
+        }
+        #myDiv{
+            border: 1px solid coral;
+        }
+        #menu{
+            visibility: hidden;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">
+        <!-- Lorem -->
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+    </div>
+    <ul id="menu">
+        <li>Java</li>
+        <li>Python</li>
+        <li>JS</li>
+        <li>HTML</li>
+        <li>CSS</li>
+    </ul>
+    <script>
+        window.addEventListener('load',(event) => {
+            const oDiv = document.querySelector('#myDiv');
+
+            oDiv.addEventListener('contextmenu',(event) => {
+                event.preventDefault();
+                
+                const menu = document.querySelector('#menu');
+                menu.style.left = event.clientX + "px";
+                menu.style.top = event.clientY + "px";
+                menu.style.visibility = 'visible';
+            });
+
+            document.addEventListener('click',(event) => {
+                document.querySelector('#menu').style.visibility = 'hidden';
+            })
+
+            // window.addEventListener('beforeunload',(e) => {
+            //     e.preventDefault();
+            //     alert('');
+            // })
+        })
+    </script>
+</body>
+</html>

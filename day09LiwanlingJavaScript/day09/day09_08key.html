@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>键盘事件</title>
+</head>
+<body>
+    <form action="#">
+        <input type="text" id="txtUerName">
+    </form>
+    <script>
+        const oUserName = document.querySelector('#txtUerName');
+
+        oUserName.addEventListener('keypress',(e) => {
+            // console.log(`charCode:${String.fromCharCode(e.charCode)}`);
+            // console.log(`keypress:${e.key}`);
+            // console.log('keypress');
+            console.log(`keyup:${String.fromCharCode(e.keyCode)}`)
+            console.log(`keyup-keyCode:${e.keyCode}`)
+            console.log(`keyup-charCode:${e.charCode}`)
+            console.log(`keyup-key:${e.key}`)
+            console.log(`keyup-code:${e.code}`)
+        })
+        oUserName.addEventListener('keydown',(e) => {
+            // console.log(`keydown:${e.keyCode}`);
+            // console.log(`keypress:${e.key}`);
+            // console.log('keydown');
+
+        })
+        oUserName.addEventListener('keyup',(e) => {
+            // console.log('keyup');
+            //console.log(`keyup:${String.fromCharCode(e.keyCode)}`)
+        })
+        oUserName.addEventListener('input',(e) => {
+            // console.log('input');
+            //console.log(`input:${e.keyCode}`)
+        })
+    </script>
+</body>
+</html>
